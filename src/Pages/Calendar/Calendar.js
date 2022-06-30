@@ -4,7 +4,7 @@ import "react-day-picker/dist/style.css";
 
 const Calendar = () => {
   return (
-    <div>
+    <div className="flex justify-center ">
       {" "}
       <DayPicker />
     </div>
