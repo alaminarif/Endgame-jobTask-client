@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Home from "../Home/Home";
 import Todo from "./Todo";
 
 const Todos = () => {
@@ -9,14 +10,17 @@ const Todos = () => {
       .then((data) => setTodo(data));
   }, []);
   return (
-    <table className="table flex justify-center mx-auto">
-      <thead></thead>
-      <tbody>
-        {todos.map((todo, index) => (
-          <Todo todos={todos} index={index} setTodo={setTodo} todo={todo} key={todo._id} />
-        ))}
-      </tbody>
-    </table>
+    <>
+      <Home />
+      <table className="table flex justify-center  mx-auto">
+        <thead></thead>
+        <tbody>
+          {todos.map((todo, index) => (
+            <Todo todos={todos} index={index} setTodo={setTodo} todo={todo} key={todo._id} />
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 

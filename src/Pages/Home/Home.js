@@ -20,17 +20,17 @@ const Home = () => {
       .then((result) => {
         console.log(result);
         if (result.insertedId) {
-          toast.success("success review");
+          toast.success("Task Added");
         }
       });
     reset();
   };
   return (
     <div>
-      {" "}
+      <h2 className="text-4xl font-bold mt-8">what's the plan today</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center mt-10">
-        <input type="text" placeholder="Type here" class="input w-full max-w-xs border-primary" {...register("name")} />
-        <input type="submit" className=" w-48 text-white btn btn-active btn-primary ml-4" value="Save" />
+        <input type="text" placeholder="Type here" className="input max-w-xs border-primary" {...register("name")} />
+        <input type="submit" className=" w-32 text-white btn btn-active btn-primary ml-4" value="Save" />
       </form>
       <ToastContainer />
       <Footer />
