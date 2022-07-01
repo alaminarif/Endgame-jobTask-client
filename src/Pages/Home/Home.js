@@ -2,12 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Share/Footer";
 
 const Home = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const url = "http://localhost:5000/todo/";
+    const url = "https://sleepy-bayou-07140.herokuapp.com/todo/";
     fetch(url, {
       method: "POST",
       headers: {
@@ -32,6 +33,7 @@ const Home = () => {
         <input type="submit" className=" w-48 text-white btn btn-active btn-primary ml-4" value="Save" />
       </form>
       <ToastContainer />
+      <Footer />
     </div>
   );
 };
